@@ -1,0 +1,30 @@
+TITL LiN2-230326-154256-bec1d1 -0.0510 62.693117 -1.48566175E+003 0 0  6 (Immm) n - 1
+REM
+REM Run started: Sun, 26 Mar 2023 15:44:05 +0100 in /scratch/scratch/uccabz1/launch_tmp_michael/launcher_2023-03-26-14-42-56-644007
+REM CASTEP 21.1 from code version cdfb9687+ bz-changes Mon Jan 4 11:18:28 2021 +0000
+REM Functional Perdew Burke Ernzerhof Relativity Koelling-Harmon Dispersion off
+REM Cut-off 340.0000 eV Grid scale 1.7500 Gmax 16.5316 1/A FBSC none
+REM MP grid 6 4 4 Offset 0.000 0.000 0.000 No. kpts 27 Spacing 0.07
+REM Total runtime: 84.37 s
+REM Overall efficiency: 55.2 %
+REM
+REM LiN2.cell (b953e92e767f3f2c67521e63ea917690)
+REM ## AIRSS Version 0.9.3 July 2022 commit v0.9.3-8-ga1e635fa32177e30cc
+REM compiler GCC version 4.9.2
+REM options -cpp -iprefix /scratch/UCL/applications/gcc/4.9.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.9.2/ -mtune=corei7 -march=x86-64 -g -Og
+REM COMMAND_LINE
+REM seed 261264192 -266157141 574650621 -284179372 438527203 299530858 -249152332 -1706655397 -696103563 779681836 -2126790625 906109333
+REM
+REM N 2|1.4|13|15|17|20:21(qc=5)
+REM Li 1|1.3|8|9|10|10U:20(qc=5)
+REM 
+CELL 1.54180    2.95981    5.00610    5.00610   64.42914   72.80529   72.80529
+LATT -1
+SFAC Li N  
+Li     1  0.0380870490414  0.2780828757652  0.2780828757652 1.0
+Li     1 -0.4057470994282 -0.2780829757652 -0.2780829757652 1.0
+N      2  0.3818327543037 -0.3221330343145  0.1724228509004 1.0
+N      2  0.2321226708897  0.3221329343145 -0.1724229509004 1.0
+N      2  0.2321226708897 -0.1724229509004  0.3221329343145 1.0
+N      2  0.3818327543037  0.1724228509004 -0.3221330343145 1.0
+END
