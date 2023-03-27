@@ -1,0 +1,4 @@
+m3gnet==0.2.4
+ase>=3.22.1,<4
+git+https://github.com/zhubonan/disp@eb0338f#egg=disp
+pymatgen

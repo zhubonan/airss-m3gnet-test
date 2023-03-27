@@ -1,0 +1,10 @@
+name: m3gnet
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - m3gnet==0.2.4
+  - ase~=3.22
+  - pymatgen
+  - airss==0.9.3
+
