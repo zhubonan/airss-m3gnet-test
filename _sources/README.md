@@ -47,5 +47,5 @@ ls with-u-rerun/*.res | parallel -j 8 -n 30 python m3gnet-relax.py with-u-rerun-
 
 # Table of contents
 
-```{tableofcontents}
-```
+:::{tableofcontents}
+:::
