@@ -1,0 +1,1028 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Test case \(\ce{LiFePO4}\) &#8212; Test M3GNet for random structure searching</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analysis-lifepo4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Test case - \(\ce{LiFeSO4F}\)" href="analysis-lifeso4f.html" />
+    <link rel="prev" title="Testing M3GNet for Random Structure Searching" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Testing M3GNet for Random Structure Searching
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lifeso4f.html">Test case - <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html">Test CASE - <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span></a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zhubonan/airss-m3gnet-test" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zhubonan/airss-m3gnet-test/issues/new?title=Issue%20on%20page%20%2Fanalysis-lifepo4.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analysis-lifepo4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Test case \ce{LiFePO4}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-volume-distribution">Energy - Volume distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3gnet-search-results">M3GNet search results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-comparison">Histogram comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="test-case-ce-lifepo4">
+<h1>Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span><a class="headerlink" href="#test-case-ce-lifepo4" title="Permalink to this heading">#</a></h1>
+<p>Use existence data of <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> search and check if the low energy structures can be find by relaxation using M3GNet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;-1&quot;</span>    
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">import</span> <span class="nn">ase</span>
+<span class="c1"># from m3gnet.models import Relaxer</span>
+<span class="c1"># from pymatgen.ext.matproj import MPRester</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+
+<span class="kn">from</span> <span class="nn">disp.analysis.airssutils</span> <span class="kn">import</span> <span class="n">RESFile</span>
+
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span> <span class="nn">pymatgen.io.ase</span> <span class="kn">import</span> <span class="n">AseAtomsAdaptor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<p>Locate the <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> structures from MP</p>
+<p>Load pre-computed relaxation results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lfp_mp</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFePO4-mp-19017.vasp&quot;</span><span class="p">)</span>
+<span class="n">lfp_cmcm</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFePO4-mp-18951.vasp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Relax the experimental structures using M3GNet</p>
+<p>Load pre-computed results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lfp_relaxed</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;exp-m3gnet/LiFePO4-mp-19017.res&quot;</span><span class="p">)</span>
+<span class="n">lfp_relaxed_energy</span> <span class="o">=</span> <span class="n">lfp_relaxed</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">lfp_relaxed</span><span class="p">)</span>
+<span class="n">lfp_relaxed_volume</span> <span class="o">=</span> <span class="n">lfp_relaxed</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">lfp_relaxed</span><span class="p">)</span>
+
+<span class="n">lfp_cmcm_relaxed</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;exp-m3gnet/LiFePO4-mp-18951.res&quot;</span><span class="p">)</span>
+<span class="n">lfp_cmcm_relaxed_energy</span> <span class="o">=</span> <span class="n">lfp_cmcm_relaxed</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">lfp_cmcm_relaxed</span><span class="p">)</span>
+<span class="n">lfp_cmcm_relaxed_volume</span> <span class="o">=</span> <span class="n">lfp_cmcm_relaxed</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span><span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">lfp_cmcm_relaxed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load dataset&quot;&quot;&quot;</span>
+    <span class="n">cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">read</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>  <span class="n">tqdm</span><span class="p">(</span><span class="n">names</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="n">input_names</span><span class="p">):</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;fname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">stem</span>
+
+    <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">:</span>
+        <span class="n">dataset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;atoms&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="p">,</span>
+            <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;fname&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;energy&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">),</span>
+            <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">(),</span>
+            <span class="s1">&#39;volume_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">),</span>
+
+        <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load calculated data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># AIRSS Search with CASTEP QC5</span>
+<span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;with-u-rerun&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_dft</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+
+<span class="c1"># AIRSS Search with structures relaxed buy M3GNet</span>
+<span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;with-u-rerun-m3gnet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_m3g</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+
+<span class="c1"># AIRSS Search with structures relaxed buy M3GNet</span>
+<span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;with-u-rerun-relaxed-m3gnet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_relaxed_m3g</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+
+<span class="c1"># AIRSS Search results recalculated using VASP PBE + U</span>
+<span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;with-u-rerun-refine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_dft_refine</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extra AIRSS search (new structure from buildcell) relaxed with M3GNet focusing on four formula units</span>
+<span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;with-u-rerun-extras-m3gnet/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_m3g_extras</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="energy-volume-distribution">
+<h2>Energy - Volume distribution<a class="headerlink" href="#energy-volume-distribution" title="Permalink to this heading">#</a></h2>
+<p>These plots are useful for checking the search results and how the relaxed structure distribute in the configuration space.</p>
+<p>Very often the unique structure can be identified this way as different polymorphs tend to have different volumes</p>
+</section>
+<section id="m3gnet-search-results">
+<h2>M3GNet search results<a class="headerlink" href="#m3gnet-search-results" title="Permalink to this heading">#</a></h2>
+<p>The input structures are those used in the previous search. Experimental structures as labeled with diamond.<br />
+The orange dots represent the structure that are first relaxed by DFT, then re-relaxed by M3GNet.
+There are two experimental structures, <span class="math notranslate nohighlight">\(Pnma\)</span> (olivene) and <span class="math notranslate nohighlight">\(Cmcm\)</span> (high-temperature / pressure phase).</p>
+<p>It appears that the M3GNet search is capable of finding the <span class="math notranslate nohighlight">\(Cmcm\)</span> structure.
+But for the <span class="math notranslate nohighlight">\(Pnma\)</span> phase it is not so clear. There are two structure that can be the <span class="math notranslate nohighlight">\(Pnma\)</span> structure (close to the lowest energy diamond) upon inspection.
+However, they are not identical to the actual <span class="math notranslate nohighlight">\(Pnma\)</span> structure after relaxation.
+Interestingly, relaxing the <span class="math notranslate nohighlight">\(Pnma\)</span> structure from the DFT search gives the same result as starting from the experimental <span class="math notranslate nohighlight">\(Pnma\)</span>.
+This confirms that the former is indeed the ground state structure.</p>
+<p>Perhaps the relaxation got stuck in noisy potential energy surface?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_relaxed_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DFT relaxed - m3gnet&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="p">[</span><span class="n">lfp_relaxed_volume</span><span class="p">,</span> <span class="n">lfp_cmcm_relaxed_volume</span><span class="p">],</span> <span class="p">[</span><span class="n">lfp_relaxed_energy</span><span class="p">,</span> <span class="n">lfp_cmcm_relaxed_energy</span><span class="p">],</span>  <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">6.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;M3GNet LiFePO4 AIRSS rerun&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;M3GNet LiFePO4 AIRSS rerun&#39;)
+</pre></div>
+</div>
+<img alt="_images/0e7a900f32b05648c05ddfa1fca6d756cee2ab93d1eb7824c016a6a1d5b5d7ea.png" src="_images/0e7a900f32b05648c05ddfa1fca6d756cee2ab93d1eb7824c016a6a1d5b5d7ea.png" />
+</div>
+</div>
+<p>The top three structures in the DFT search are the <span class="math notranslate nohighlight">\(Pnma\)</span> structure</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dft</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>209</th>
+      <td>(Atom('Li', [-1.27204080371, -0.08562405684, -...</td>
+      <td>4LFP_actual-201127-012020-107264</td>
+      <td>-12150.5489</td>
+      <td>-433.948175</td>
+      <td>293.964179</td>
+      <td>10.498721</td>
+    </tr>
+    <tr>
+      <th>2185</th>
+      <td>(Atom('Li', [1.2645500751, 2.8846016452910335,...</td>
+      <td>4LFP_actual-201126-142402-eb7dce</td>
+      <td>-12150.4655</td>
+      <td>-433.945196</td>
+      <td>291.994353</td>
+      <td>10.428370</td>
+    </tr>
+    <tr>
+      <th>2304</th>
+      <td>(Atom('Li', [0.0, 2.98881, 0.0], index=0), Ato...</td>
+      <td>4LFP_actual-201126-144638-9aee88</td>
+      <td>-12150.3458</td>
+      <td>-433.940921</td>
+      <td>293.828259</td>
+      <td>10.493866</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The top three structures in the M3GNet search The first structure are in fact very close to the <span class="math notranslate nohighlight">\(Pnma\)</span> structure.
+The second and the third structure has much larger volume, however which is potentially an false minima.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_m3g</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2304</th>
+      <td>(Atom('Li', [1.2980831344313938e-08, 3.0477790...</td>
+      <td>4LFP_actual-201126-144638-9aee88</td>
+      <td>-190.6370</td>
+      <td>-6.808464</td>
+      <td>306.752400</td>
+      <td>10.955443</td>
+    </tr>
+    <tr>
+      <th>896</th>
+      <td>(Atom('Li', [1.4982718026222916, -2.7811777820...</td>
+      <td>4LFP_actual-201126-194829-b3779f</td>
+      <td>-190.5574</td>
+      <td>-6.805621</td>
+      <td>362.857838</td>
+      <td>12.959209</td>
+    </tr>
+    <tr>
+      <th>1347</th>
+      <td>(Atom('Li', [-0.10981643308137104, 1.862519399...</td>
+      <td>4LFP-201124-120454-c024e6</td>
+      <td>-95.2657</td>
+      <td>-6.804693</td>
+      <td>179.228053</td>
+      <td>12.802004</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Top three entries in the M3GNet-relaxed-DFT-optimised structure, note that they are the same as the top thress in the DFT dataset above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_relaxed_m3g</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2304</th>
+      <td>(Atom('Li', [-5.082385941234509e-08, 3.0385184...</td>
+      <td>4LFP_actual-201126-144638-9aee88</td>
+      <td>-190.7400</td>
+      <td>-6.812143</td>
+      <td>303.249630</td>
+      <td>10.830344</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>(Atom('Li', [-1.2298484862066035, -0.047512032...</td>
+      <td>4LFP_actual-201127-012020-107264</td>
+      <td>-190.7347</td>
+      <td>-6.811954</td>
+      <td>302.651490</td>
+      <td>10.808982</td>
+    </tr>
+    <tr>
+      <th>2185</th>
+      <td>(Atom('Li', [1.2550794873303508, 2.90345909632...</td>
+      <td>4LFP_actual-201126-142402-eb7dce</td>
+      <td>-190.7269</td>
+      <td>-6.811675</td>
+      <td>301.539086</td>
+      <td>10.769253</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Results from additional structure sampled with M3GNet.</p>
+<p>Due to the low cost of M3GNet relaxation, we can afford sampling much more structures than DFT even if the latter already uses low-cost setting focusing on the speed.</p>
+<p>But this time the <span class="math notranslate nohighlight">\(Pnma\)</span> structure is not found, maybe it is just bad luck 🎲? The search includes random structure containing 4 formula units only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g_extras</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="p">[</span><span class="n">lfp_relaxed_volume</span><span class="p">,</span> <span class="n">lfp_cmcm_relaxed_volume</span><span class="p">],</span> <span class="p">[</span><span class="n">lfp_relaxed_energy</span><span class="p">,</span> <span class="n">lfp_cmcm_relaxed_energy</span><span class="p">],</span>  <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">6.85</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.6</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;M3GNet LiFePO4 extras&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;M3GNet LiFePO4 extras&#39;)
+</pre></div>
+</div>
+<img alt="_images/869cbe4f17e84ef4834470984d2f7c8a69f84228cfbc5ef30c38717ae5044656.png" src="_images/869cbe4f17e84ef4834470984d2f7c8a69f84228cfbc5ef30c38717ae5044656.png" />
+</div>
+</div>
+<p>The top structure has an increased volume this time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_m3g_extras</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1390</th>
+      <td>(Atom('Li', [-1.1350046904651516, -2.454437522...</td>
+      <td>4LFP-extras-2879</td>
+      <td>-190.4938</td>
+      <td>-6.803350</td>
+      <td>363.653936</td>
+      <td>12.987641</td>
+    </tr>
+    <tr>
+      <th>2377</th>
+      <td>(Atom('Li', [-1.5309058610971905e-07, -3.47717...</td>
+      <td>4LFP-extras-3721</td>
+      <td>-190.4353</td>
+      <td>-6.801261</td>
+      <td>292.665307</td>
+      <td>10.452332</td>
+    </tr>
+    <tr>
+      <th>2418</th>
+      <td>(Atom('Li', [-0.9141561212472172, -1.608771912...</td>
+      <td>4LFP-extras-2798</td>
+      <td>-190.4301</td>
+      <td>-6.801075</td>
+      <td>293.326901</td>
+      <td>10.475961</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>(Atom('Li', [-0.06135356788171718, 1.447172254...</td>
+      <td>4LFP-extras-2148</td>
+      <td>-190.4099</td>
+      <td>-6.800354</td>
+      <td>292.869739</td>
+      <td>10.459634</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Results of the DFT PBE + U search using CASTEP with the QC5 pseudopotential.</p>
+<p>Both the <span class="math notranslate nohighlight">\(Pnma\)</span> and the <span class="math notranslate nohighlight">\(Cmcm\)</span> phases have been found.
+The DFT energies have large spreads due to the coarse calculation settings used. As we show above, the top three lowest energy structures are indeed the <span class="math notranslate nohighlight">\(Pnma\)</span> phase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_dft</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">434</span><span class="p">,</span> <span class="o">-</span><span class="mf">433.75</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PBE + U Search&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4b48020940&gt;
+</pre></div>
+</div>
+<img alt="_images/5f4a52954d3ab9c9c240c265b25afc4915b4a5e980e51f4ce9b0eda718cc86a6.png" src="_images/5f4a52954d3ab9c9c240c265b25afc4915b4a5e980e51f4ce9b0eda718cc86a6.png" />
+</div>
+</div>
+<p>Below is a plot from the structure from the search re-relaxed using VASP PBE + U.
+The settings used the different from those in the Materials Project (used for M3GNet training) hence the energies are not comparable.</p>
+<p>Nevertheless, the low energy <span class="math notranslate nohighlight">\(Pnma\)</span> and <span class="math notranslate nohighlight">\(Cmcm\)</span> phases can be seen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_dft_refine</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PBE + U VASP&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">6.90</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.65</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-6.9, -6.65)
+</pre></div>
+</div>
+<img alt="_images/de9e3c503e798ade506bd10a80813916b290f2d2ec57cab484ac1a3490479d52.png" src="_images/de9e3c503e798ade506bd10a80813916b290f2d2ec57cab484ac1a3490479d52.png" />
+</div>
+</div>
+</section>
+<section id="histogram-comparison">
+<h2>Histogram comparison<a class="headerlink" href="#histogram-comparison" title="Permalink to this heading">#</a></h2>
+<p>Compare the distribution of the low energy structures. This gives some hint of distribution of the local minima in the potential energy surface.</p>
+<p>Very different distributions means the potential energy surfaces are very different…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">engs</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="p">[</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">engs_m3g</span> <span class="o">=</span> <span class="n">engs</span> <span class="o">-</span> <span class="n">lfp_relaxed_energy</span>
+<span class="n">engs</span> <span class="o">=</span> <span class="n">df_m3g_extras</span><span class="p">[</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">engs_m3g_extras</span> <span class="o">=</span> <span class="n">engs</span> <span class="o">-</span> <span class="n">lfp_relaxed_energy</span>
+
+<span class="n">engs</span> <span class="o">=</span> <span class="n">df_dft</span><span class="p">[</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">engs_dft</span> <span class="o">=</span> <span class="n">engs</span> <span class="o">-</span> <span class="n">engs</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">engs_m3g</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3g&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">engs_m3g_extras</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3g-extras-4fu&#39;</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">engs_dft</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PBE + U&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4b47e06d40&gt;
+</pre></div>
+</div>
+<img alt="_images/2edfa7f0db3e4168b482a9ed3bd32c48e1b84a636c4c80b53efe24308a495d07.png" src="_images/2edfa7f0db3e4168b482a9ed3bd32c48e1b84a636c4c80b53efe24308a495d07.png" />
+</div>
+</div>
+<p>The distributions do not differ much, indicating the M3GNet has done a good job here!</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<p>For <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> M3GNet is capable of locating the low energy <span class="math notranslate nohighlight">\(Cmcm\)</span> phase as well as the <span class="math notranslate nohighlight">\(Pnma\)</span> phase, although there seems to be some complication with the latter, but it is very likely the true DFT ground state can be recovered after further DFT relaxation.</p>
+<p>In addition, M3GNet has done a good job reproducing the DFT energy landscape in terms of the low energy basin distributions.</p>
+<p>So can we use M3GNet for searching? Probably fine for <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span>, but are something one should note:</p>
+<ul class="simple">
+<li><p>M3GNet appears to generate false minima, which is unlikely to happen for DFT calculation despite the use of coarse settings.</p></li>
+<li><p>On the other hand, M3GNet has much reduced calculation costs hence much more structures may be sampled. The true ground state can still be recovered even if there are false minima.</p></li>
+<li><p>One should note that M3GNet is built from a vast database of DFT calculation while a DFT search does not rely on any pre-existing data apart from some estimate specie-wise distances.</p></li>
+<li><p>The Materials Project contains many data for oxide and phosphates, in addition it also has relative large set of data for <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> polymorphs. The training data for M3GNet includes the <span class="math notranslate nohighlight">\(Pnma\)</span> and the <span class="math notranslate nohighlight">\(Cmcm\)</span> structures.</p></li>
+</ul>
+<p>Hence, further testings are need! Does M3GNet work well where the ground state is not included in the training set? What about cases where the stoichiometry is not in the trainin set at all?</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Testing M3GNet for Random Structure Searching</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="analysis-lifeso4f.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Test case - <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-volume-distribution">Energy - Volume distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3gnet-search-results">M3GNet search results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-comparison">Histogram comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bonan Zhu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

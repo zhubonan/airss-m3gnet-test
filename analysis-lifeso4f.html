@@ -1,0 +1,913 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Test case - \(\ce{LiFeSO4F}\) &#8212; Test M3GNet for random structure searching</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analysis-lifeso4f';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Test CASE - \(\ce{LiN2}\)" href="analysis-lin2.html" />
+    <link rel="prev" title="Test case \(\ce{LiFePO4}\)" href="analysis-lifepo4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Testing M3GNet for Random Structure Searching
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="analysis-lifepo4.html">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Test case - <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html">Test CASE - <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span></a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zhubonan/airss-m3gnet-test" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zhubonan/airss-m3gnet-test/issues/new?title=Issue%20on%20page%20%2Fanalysis-lifeso4f.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analysis-lifeso4f.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Test case - \ce{LiFeSO4F}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">Loading data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-energy-structure">Low energy structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-of-structures-distribution">Density of structures distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remark">Concluding remark</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="math notranslate nohighlight">
+\[\require{mhchem}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="test-case-ce-lifeso4f">
+<h1>Test case - <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span><a class="headerlink" href="#test-case-ce-lifeso4f" title="Permalink to this heading">#</a></h1>
+<p>Here we use M3GNet to search for low energy <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span> structures.
+The DFT results have been previously published here: <a class="reference external" href="https://aip.scitation.org/doi/full/10.1063/5.0076220">https://aip.scitation.org/doi/full/10.1063/5.0076220</a>.</p>
+<p>The search for <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span> is more challenging than <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> for M3GNet, becuase the Materials Project database does not have extensive data on the low energy polymorphs.
+The work work above, we have found several new polymorphs which are not present in the Materials Project database.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;-1&quot;</span>    
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">import</span> <span class="nn">ase</span>
+<span class="c1"># from m3gnet.models import Relaxer</span>
+<span class="c1"># from pymatgen.ext.matproj import MPRester</span>
+<span class="kn">from</span> <span class="nn">pymatgen.core</span> <span class="kn">import</span> <span class="n">Structure</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="loading-data">
+<h2>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lifeso4f_mp</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFeSO4F-mp-943492.vasp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lifeso4f_mp_relaxed</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s2">&quot;exp-m3gnet/LiFeSO4F-mp-943492.res&quot;</span><span class="p">)</span>
+<span class="n">lifeso4f_mp_relaxed_energy</span> <span class="o">=</span> <span class="n">lifeso4f_mp_relaxed</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>  <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">lifeso4f_mp_relaxed</span><span class="p">)</span>
+<span class="n">lifeso4f_mp_relaxed_volume</span> <span class="o">=</span> <span class="n">lifeso4f_mp_relaxed</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">lifeso4f_mp_relaxed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+    <span class="n">cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">read</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>  <span class="n">tqdm</span><span class="p">(</span><span class="n">names</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span> <span class="n">input_names</span><span class="p">):</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;fname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">stem</span>
+
+    <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">:</span>
+        <span class="n">dataset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;atoms&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="p">,</span>
+            <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;fname&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;energy&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">),</span>
+            <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">(),</span>
+            <span class="s1">&#39;volume_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">),</span>
+
+        <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load calculated data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;LiFeSO4F-run1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_dft</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;LiFeSO4F-run1-m3gnet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_m3g</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;LiFeSO4F-relaxed-m3gnet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_relaxed_m3g</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">input_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="low-energy-structure">
+<h2>Low energy structure<a class="headerlink" href="#low-energy-structure" title="Permalink to this heading">#</a></h2>
+<p>Plot the energy and volume of the low energy structure found by the search</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_relaxed_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DFT relaxed -&gt; m3gnet&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span> <span class="p">[</span><span class="n">lifeso4f_mp_relaxed_volume</span><span class="p">],</span> <span class="p">[</span><span class="n">lifeso4f_mp_relaxed_energy</span><span class="p">],</span>  <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Experimental&#39;</span><span class="p">)</span>
+<span class="n">min_eng</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="o">.</span><span class="n">energy_per_atom</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="c1">#ax.set_xlim(10, 15)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">min_eng</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">min_eng</span><span class="o">+</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f54e1f2e500&gt;
+</pre></div>
+</div>
+<img alt="_images/8bd2721653ca3efddd566e38e6b6f259a12117d036b5093510518c88a35f4945.png" src="_images/8bd2721653ca3efddd566e38e6b6f259a12117d036b5093510518c88a35f4945.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_dft</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> 
+                         <span class="c1">#xlim=(9, 14), ylim=(-434, -433.75), </span>
+                         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PBE + U Search&#39;</span><span class="p">)</span>
+<span class="n">min_eng</span> <span class="o">=</span> <span class="n">df_dft</span><span class="o">.</span><span class="n">energy_per_atom</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">min_eng</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">min_eng</span><span class="o">+</span> <span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f54e5129600&gt;
+</pre></div>
+</div>
+<img alt="_images/d26f97bb96416bc81367492d3ab47e417f433e092199f14b93ccb7b3287e9ccf.png" src="_images/d26f97bb96416bc81367492d3ab47e417f433e092199f14b93ccb7b3287e9ccf.png" />
+</div>
+</div>
+<p>Top structure found in each case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_dft</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3018</th>
+      <td>(Atom('Li', [2.059504020548763, -1.98859034554...</td>
+      <td>2LiFeSO4F-200804-034722-678938</td>
+      <td>-7566.69161</td>
+      <td>-472.918226</td>
+      <td>206.246318</td>
+      <td>12.890395</td>
+    </tr>
+    <tr>
+      <th>3164</th>
+      <td>(Atom('Li', [-1.5226934928220406, -0.933181268...</td>
+      <td>2LiFeSO4F-200804-022644-43b3f4</td>
+      <td>-7566.60922</td>
+      <td>-472.913076</td>
+      <td>204.850115</td>
+      <td>12.803132</td>
+    </tr>
+    <tr>
+      <th>2308</th>
+      <td>(Atom('Li', [1.506788176531176, 2.578680510737...</td>
+      <td>2LiFeSO4F-200804-022154-9da9fb</td>
+      <td>-7566.59285</td>
+      <td>-472.912053</td>
+      <td>206.697060</td>
+      <td>12.918566</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_relaxed_m3g</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3092</th>
+      <td>(Atom('Li', [-4.040317086726308, 1.32106399150...</td>
+      <td>2LiFeSO4F-200818-173807-f55f90</td>
+      <td>-96.1692</td>
+      <td>-6.010575</td>
+      <td>186.573736</td>
+      <td>11.660858</td>
+    </tr>
+    <tr>
+      <th>1536</th>
+      <td>(Atom('Li', [2.1532730716003248, 2.26455243755...</td>
+      <td>4LiFeSO4F-200804-093629-270f26</td>
+      <td>-192.3336</td>
+      <td>-6.010425</td>
+      <td>373.230599</td>
+      <td>11.663456</td>
+    </tr>
+    <tr>
+      <th>2838</th>
+      <td>(Atom('Li', [2.581405187021502, -0.07824537357...</td>
+      <td>2LiFeSO4F-200804-043547-80a807</td>
+      <td>-96.1644</td>
+      <td>-6.010275</td>
+      <td>186.725737</td>
+      <td>11.670359</td>
+    </tr>
+    <tr>
+      <th>3018</th>
+      <td>(Atom('Li', [1.9857412726393426, -2.0377037880...</td>
+      <td>2LiFeSO4F-200804-034722-678938</td>
+      <td>-96.1630</td>
+      <td>-6.010187</td>
+      <td>210.991581</td>
+      <td>13.186974</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>(Atom('Li', [2.1975093962436243, 2.15060793465...</td>
+      <td>2LiFeSO4F-200819-000200-50146f</td>
+      <td>-96.1623</td>
+      <td>-6.010144</td>
+      <td>186.818119</td>
+      <td>11.676132</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_m3g</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1932</th>
+      <td>(Atom('Li', [1.3735649173482027, -1.3091754241...</td>
+      <td>2LiFeSO4F-200804-055229-a4aef3</td>
+      <td>-96.1300</td>
+      <td>-6.008125</td>
+      <td>186.933079</td>
+      <td>11.683317</td>
+    </tr>
+    <tr>
+      <th>2838</th>
+      <td>(Atom('Li', [2.6514121507508763, 0.08089966622...</td>
+      <td>2LiFeSO4F-200804-043547-80a807</td>
+      <td>-96.1298</td>
+      <td>-6.008113</td>
+      <td>187.268464</td>
+      <td>11.704279</td>
+    </tr>
+    <tr>
+      <th>1755</th>
+      <td>(Atom('Li', [1.4096927825611902, -1.3846909426...</td>
+      <td>2LiFeSO4F-200818-200625-fa2e89</td>
+      <td>-96.0803</td>
+      <td>-6.005019</td>
+      <td>186.519101</td>
+      <td>11.657444</td>
+    </tr>
+    <tr>
+      <th>1468</th>
+      <td>(Atom('Li', [-1.7653730722637455, 1.6448893698...</td>
+      <td>2LiFeSO4F-200804-031846-78332d</td>
+      <td>-96.0316</td>
+      <td>-6.001975</td>
+      <td>193.350160</td>
+      <td>12.084385</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>(Atom('Li', [2.5749066880092033, 2.11354669305...</td>
+      <td>2LiFeSO4F-200819-000200-50146f</td>
+      <td>-96.0316</td>
+      <td>-6.001975</td>
+      <td>189.802136</td>
+      <td>11.862633</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">#</a></h2>
+<p>Search using M3GNet for relaxation is not able to reproduce the DFT results.
+However, M3GNet does give a reasonable good description for the low energy structures. In particular, the DFT lowest energy strucure <code class="docutils literal notranslate"><span class="pre">678938</span></code> is also found to be one of the lowest energy structure.</p>
+<p>Intestingly, <em>f55f90</em> (in <code class="docutils literal notranslate"><span class="pre">df_relaxed_m3g</span></code>) and <em>a4aef3</em> in (<code class="docutils literal notranslate"><span class="pre">df_m3g</span></code>) has almost the same structure but hte energies are different by 2 meV and almost identical structures have been found for them separately.</p>
+<p>Could this indicate that the potential energy of M3GNet is slightly rugged with smaller basins?</p>
+</section>
+<section id="density-of-structures-distribution">
+<h2>Density of structures distribution<a class="headerlink" href="#density-of-structures-distribution" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">engs</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="p">[</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">engs_m3g</span> <span class="o">=</span> <span class="n">engs</span> <span class="o">-</span> <span class="n">lifeso4f_mp_relaxed_energy</span>
+<span class="n">engs</span> <span class="o">=</span> <span class="n">df_dft</span><span class="p">[</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">engs_dft</span> <span class="o">=</span> <span class="n">engs</span> <span class="o">-</span> <span class="n">engs</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">engs_m3g</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;M3GNet&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">engs_dft</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DFT&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f54e1dae770&gt;
+</pre></div>
+</div>
+<img alt="_images/ff73fba1dc6f87f4fde18c25e543746d1fa2644fe72ce6cd56f2120f59368830.png" src="_images/ff73fba1dc6f87f4fde18c25e543746d1fa2644fe72ce6cd56f2120f59368830.png" />
+</div>
+</div>
+</section>
+<section id="concluding-remark">
+<h2>Concluding remark<a class="headerlink" href="#concluding-remark" title="Permalink to this heading">#</a></h2>
+<p>Reproducing the DFT search results using M3GNet appears to be more challenging for <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>.
+In particular, the polymorphs with silimanite ordering appears to be completely missing.</p>
+<p>However, M3GNet does give good descriptions of their energies as re-relaxing the DFT structures result in one of the lowest energy structures.
+This suggest that M3GNet does well when interpolating - even if there are little <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span> data in the training set, there are plenty of training data in the composition space of Li-Fe-S-O-F.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="analysis-lifepo4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="analysis-lin2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Test CASE - <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">Loading data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#low-energy-structure">Low energy structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments">Comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#density-of-structures-distribution">Density of structures distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remark">Concluding remark</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bonan Zhu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
