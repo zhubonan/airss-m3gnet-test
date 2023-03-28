@@ -7,4 +7,6 @@ dependencies:
   - ase~=3.22
   - pymatgen
   - airss==0.9.3
+  - panadas
+  - jupyter-book
 
