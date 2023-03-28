@@ -365,21 +365,21 @@ An important advance of this model is the use of trajectories of geometry optimi
 this improves the performance as well as the robustness of the model, making it one step closer to a universal MLP that covers the entire periodic table.</p>
 <p>First-principle crystal structure prediction is often considered by very costly due to the need for DFT relaxations.
 If M3GNet can completely replace the DFT calculation, this could result in significant savings of the computational cost.</p>
-<p>In particular, we revist previous searches for battery materials <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> and <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>, which have been conducted using <em>ab initio</em> random structue searching (<a class="reference external" href="https://www.mtg.msm.cam.ac.uk/Codes/AIRSS">AIRSS</a>).
-The searches has been conducted using <a class="reference external" href="http://www.castep.org/">CASTEP</a> with the <em>QC5</em> ultrasoft pseudopotentials.
+<p>In particular, we revisit previous searches for battery materials <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> and <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>, which have been conducted using <em>ab initio</em> random structure searching (<a class="reference external" href="https://www.mtg.msm.cam.ac.uk/Codes/AIRSS">AIRSS</a>).
+The searches have been conducted using <a class="reference external" href="http://www.castep.org/">CASTEP</a> with the <em>QC5</em> ultrasoft pseudopotentials.
 Further geometry optimisations are performed with more stringent pseudopotentials and setting for converged results, but often the initial results from the search can already give reasonable outputs.</p>
-<p>Due to the stoichastic nature of the search, one cannot, in theory, fully <em>reproduce</em> the DFT results.
+<p>Due to the stochastic nature of the search, one cannot, in theory, fully <em>reproduce</em> the DFT results.
 We try our best by using M3GNet to relax the <em>initial unrelaxed structures</em> from the DFT search.
 Furthermore, the <em>relaxed DFT structures</em> may also be re-relaxed by M3GNet.</p>
-<p>This tests are aimed at answersing two questions: first, whether M3GNet can reproduce the ordering of the low energy structures; second, whether M3GNet has a smooth potential energy surface (PES) which resemsbles that of the DFT.
-While the former is needed to get the correction predicton, the latter is crucial for the MLP to be able find the low energy structure in the first place.</p>
-<p>Three test cases are included here, in the order of increasing chanllege: <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span>, <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>, and <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span>.</p>
+<p>These tests are aimed at answering two questions: first, whether M3GNet can reproduce the ordering of the low energy structures; second, whether M3GNet has a smooth potential energy surface (PES) which resembles that of the DFT.
+While the former is needed to get the correction prediction, the latter is crucial for the MLP to be able to find the low energy structure in the first place.</p>
+<p>Three test cases are included here, in the order of increasing challenge: <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span>, <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>, and <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span>.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="analysis-lifepo4.html">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis-lifeso4f.html">Test case - <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span></a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html">Test CASE - <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span></a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html#next-machine-learning-potenital-accelerated-search-for-the-the-li-n-composition-space">Next - Machine Learning Potenital accelerated search for the the Li-N composition space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html#next-machine-learning-potential-accelerated-search-for-the-li-n-composition-space">Next - Machine Learning Potential accelerated search for the Li-N composition space</a></li>
 </ul>
 </div>
 </section>

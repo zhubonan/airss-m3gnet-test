@@ -358,7 +358,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-volume-distribution">Energy - Volume distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3gnet-search-results">M3GNet search results</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-comparison">Histogram comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-density-of-structures">Histogram - density of structures</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
             </nav>
@@ -396,6 +396,20 @@ document.write(`
 
 <span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
 <span class="kn">from</span> <span class="nn">pymatgen.io.ase</span> <span class="kn">import</span> <span class="n">AseAtomsAdaptor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">tqdm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">disp.analysis.airssutils</span> <span class="kn">import</span> <span class="n">RESFile</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">pymatgen.io.ase</span> <span class="kn">import</span> <span class="n">AseAtomsAdaptor</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;disp&#39;
 </pre></div>
 </div>
 </div>
@@ -488,19 +502,19 @@ document.write(`
 <section id="energy-volume-distribution">
 <h2>Energy - Volume distribution<a class="headerlink" href="#energy-volume-distribution" title="Permalink to this heading">#</a></h2>
 <p>These plots are useful for checking the search results and how the relaxed structure distribute in the configuration space.</p>
-<p>Very often the unique structure can be identified this way as different polymorphs tend to have different volumes</p>
+<p>Very often the unique structure can be identified this way, as different polymorphs tend to have different volumes</p>
 </section>
 <section id="m3gnet-search-results">
 <h2>M3GNet search results<a class="headerlink" href="#m3gnet-search-results" title="Permalink to this heading">#</a></h2>
-<p>The input structures are those used in the previous search. Experimental structures as labeled with diamond.<br />
+<p>The input structures are those used in the previous search. Experimental structures as labelled with diamond.<br />
 The orange dots represent the structure that are first relaxed by DFT, then re-relaxed by M3GNet.
-There are two experimental structures, <span class="math notranslate nohighlight">\(Pnma\)</span> (olivene) and <span class="math notranslate nohighlight">\(Cmcm\)</span> (high-temperature / pressure phase).</p>
+There are two experimental structures, <span class="math notranslate nohighlight">\(Pnma\)</span> (olivine) and <span class="math notranslate nohighlight">\(Cmcm\)</span> (high-temperature / pressure phase).</p>
 <p>It appears that the M3GNet search is capable of finding the <span class="math notranslate nohighlight">\(Cmcm\)</span> structure.
 But for the <span class="math notranslate nohighlight">\(Pnma\)</span> phase it is not so clear. There are two structure that can be the <span class="math notranslate nohighlight">\(Pnma\)</span> structure (close to the lowest energy diamond) upon inspection.
 However, they are not identical to the actual <span class="math notranslate nohighlight">\(Pnma\)</span> structure after relaxation.
 Interestingly, relaxing the <span class="math notranslate nohighlight">\(Pnma\)</span> structure from the DFT search gives the same result as starting from the experimental <span class="math notranslate nohighlight">\(Pnma\)</span>.
 This confirms that the former is indeed the ground state structure.</p>
-<p>Perhaps the relaxation got stuck in noisy potential energy surface?</p>
+<p>Perhaps the relaxation got stuck in a noisy potential energy surface?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">)</span>
@@ -721,7 +735,7 @@ The second and the third structure has much larger volume, however which is pote
 </div></div></div>
 </div>
 <p>Results from additional structure sampled with M3GNet.</p>
-<p>Due to the low cost of M3GNet relaxation, we can afford sampling much more structures than DFT even if the latter already uses low-cost setting focusing on the speed.</p>
+<p>Due to the low cost of M3GNet relaxation, we can afford to sample much more structures than DFT, even if the latter already uses low-cost setting focusing on the speed.</p>
 <p>But this time the <span class="math notranslate nohighlight">\(Pnma\)</span> structure is not found, maybe it is just bad luck 🎲? The search includes random structure containing 4 formula units only.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,7 +842,7 @@ The DFT energies have large spreads due to the coarse calculation settings used.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4b48020940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd62d2a2800&gt;
 </pre></div>
 </div>
 <img alt="_images/5f4a52954d3ab9c9c240c265b25afc4915b4a5e980e51f4ce9b0eda718cc86a6.png" src="_images/5f4a52954d3ab9c9c240c265b25afc4915b4a5e980e51f4ce9b0eda718cc86a6.png" />
@@ -854,10 +868,10 @@ The settings used the different from those in the Materials Project (used for M3
 </div>
 </div>
 </section>
-<section id="histogram-comparison">
-<h2>Histogram comparison<a class="headerlink" href="#histogram-comparison" title="Permalink to this heading">#</a></h2>
-<p>Compare the distribution of the low energy structures. This gives some hint of distribution of the local minima in the potential energy surface.</p>
-<p>Very different distributions means the potential energy surfaces are very different…</p>
+<section id="histogram-density-of-structures">
+<h2>Histogram - density of structures<a class="headerlink" href="#histogram-density-of-structures" title="Permalink to this heading">#</a></h2>
+<p>Compare the distributions of the low energy structures. This gives some hint of distribution of the local minima in the potential energy surface.</p>
+<p>Very different distributions mean the potential energy surfaces are very different…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -884,7 +898,7 @@ The settings used the different from those in the Materials Project (used for M3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4b47e06d40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcd24a0fc70&gt;
 </pre></div>
 </div>
 <img alt="_images/2edfa7f0db3e4168b482a9ed3bd32c48e1b84a636c4c80b53efe24308a495d07.png" src="_images/2edfa7f0db3e4168b482a9ed3bd32c48e1b84a636c4c80b53efe24308a495d07.png" />
@@ -900,10 +914,10 @@ The settings used the different from those in the Materials Project (used for M3
 <ul class="simple">
 <li><p>M3GNet appears to generate false minima, which is unlikely to happen for DFT calculation despite the use of coarse settings.</p></li>
 <li><p>On the other hand, M3GNet has much reduced calculation costs hence much more structures may be sampled. The true ground state can still be recovered even if there are false minima.</p></li>
-<li><p>One should note that M3GNet is built from a vast database of DFT calculation while a DFT search does not rely on any pre-existing data apart from some estimate specie-wise distances.</p></li>
+<li><p>One should note that M3GNet is built from a vast database of DFT calculation, while a DFT search does not rely on any pre-existing data apart from some estimate specie-wise distances.</p></li>
 <li><p>The Materials Project contains many data for oxide and phosphates, in addition it also has relative large set of data for <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> polymorphs. The training data for M3GNet includes the <span class="math notranslate nohighlight">\(Pnma\)</span> and the <span class="math notranslate nohighlight">\(Cmcm\)</span> structures.</p></li>
 </ul>
-<p>Hence, further testings are need! Does M3GNet work well where the ground state is not included in the training set? What about cases where the stoichiometry is not in the trainin set at all?</p>
+<p>Hence, further tests are need! Does M3GNet work well where the ground state is not included in the training set? What about cases where the stoichiometry is not in the training set at all?</p>
 </section>
 </section>
 
@@ -970,7 +984,7 @@ The settings used the different from those in the Materials Project (used for M3
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-volume-distribution">Energy - Volume distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#m3gnet-search-results">M3GNet search results</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-comparison">Histogram comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-density-of-structures">Histogram - density of structures</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
   </nav></div>
