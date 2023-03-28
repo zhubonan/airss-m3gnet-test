@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Test using M3GNet random structure searching &#8212; Test M3GNet for random structure searching</title>
+    <title>Testing M3GNet for Random Structure Searching &#8212; Test M3GNet for random structure searching</title>
   
   
   
@@ -61,9 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Test case \(\ce{LiFePO4}\)" href="analysis-lifepo4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -129,7 +132,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
@@ -148,8 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
                     Testing M3GNet for Random Structure Searching
                 </a>
             </li>
@@ -329,7 +332,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -340,11 +345,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Test using M3GNet random structure searching</h1>
+    <h1>Testing M3GNet for Random Structure Searching</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Testing M3GNet for Random Structure Searching</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaxations-using-m3gnet">Relaxations using M3GNet</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -354,9 +372,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="test-using-m3gnet-random-structure-searching">
-<h1>Test using M3GNet random structure searching<a class="headerlink" href="#test-using-m3gnet-random-structure-searching" title="Permalink to this heading">#</a></h1>
-<p>This repository contains results of testing <a class="reference external" href="https://github.com/materialsvirtuallab/m3gnet">M3GNet</a> for random structure searching.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="testing-m3gnet-for-random-structure-searching">
+<h1>Testing M3GNet for Random Structure Searching<a class="headerlink" href="#testing-m3gnet-for-random-structure-searching" title="Permalink to this heading">#</a></h1>
+<p>This repository contains results of tests for using M3GNet for random structure searching.</p>
+<p>M3GNet is a Graph Neutron Network machine learning potential (MLP) that is trained on Materials Project database.
+An important advance of this model is the use of trajectories of geometry optimisation in the training,
+this improves the performance as well as the robustness of the model, making it one step closer to a universal MLP that covers the entire periodic table.</p>
+<p>First-principle crystal structure prediction is often considered by very costly due to the need for DFT relaxations.
+If M3GNet can completely replace the DFT calculation, this could result in significant savings of the computational cost.</p>
+<p>In particular, we revisit previous searches for battery materials <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span> and <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>, which have been conducted using <em>ab initio</em> random structure searching (<a class="reference external" href="https://www.mtg.msm.cam.ac.uk/Codes/AIRSS">AIRSS</a>).
+The searches have been conducted using <a class="reference external" href="http://www.castep.org/">CASTEP</a> with the <em>QC5</em> ultrasoft pseudopotentials.
+Further geometry optimisations are performed with more stringent pseudopotentials and setting for converged results, but often the initial results from the search can already give reasonable outputs.</p>
+<p>Due to the stochastic nature of the search, one cannot, in theory, fully <em>reproduce</em> a search.
+We try our best by using M3GNet to relax the <em>initial unrelaxed structures</em> from the DFT search.
+Furthermore, the <em>relaxed DFT structures</em> may also be re-relaxed by M3GNet.</p>
+<p>These tests are aimed at answering two questions: first, whether M3GNet can reproduce the ordering of the low energy structures; second, whether M3GNet has a smooth potential energy surface (PES) which resembles that of the DFT.
+While the former is needed to get the correction prediction, the latter is crucial for the MLP to be able to find the low energy structure in the first place.</p>
+<p>Three test cases are included here, in the order of increasing challenge: <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span>, <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span>, and <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span>.</p>
+<section id="relaxations-using-m3gnet">
+<h2>Relaxations using M3GNet<a class="headerlink" href="#relaxations-using-m3gnet" title="Permalink to this heading">#</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">m3gnet-relax.py</span></code> script is avaliable for relaxing structures:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">m3gnet</span><span class="o">-</span><span class="n">relax</span><span class="o">.</span><span class="n">py</span> <span class="o">&lt;</span><span class="n">outdir</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">file1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">file2</span><span class="o">&gt;</span> <span class="o">....</span>
 </pre></div>
@@ -366,8 +400,18 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="k">with</span><span class="o">-</span><span class="n">u</span><span class="o">-</span><span class="n">rerun</span><span class="o">/*.</span><span class="n">res</span> <span class="o">|</span> <span class="n">parallel</span> <span class="o">-</span><span class="n">j</span> <span class="mi">8</span> <span class="o">-</span><span class="n">n</span> <span class="mi">30</span> <span class="n">python</span> <span class="n">m3gnet</span><span class="o">-</span><span class="n">relax</span><span class="o">.</span><span class="n">py</span> <span class="k">with</span><span class="o">-</span><span class="n">u</span><span class="o">-</span><span class="n">rerun</span><span class="o">-</span><span class="n">relaxed</span><span class="o">-</span><span class="n">m3gnet</span> <span class="p">{}</span>
 </pre></div>
 </div>
-<p>The results can stored in the Jupyter notebooks.</p>
-<p>In addition, jupyter-book is used for building a website for hosting the results.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
+<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lifepo4.html">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lifeso4f.html">Test case - <span class="math notranslate nohighlight">\(\ce{LiFeSO4F}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html">Test CASE - <span class="math notranslate nohighlight">\(\ce{LiN2}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html#next-machine-learning-potential-accelerated-search-for-the-li-n-composition-space">Next - Machine Learning Potential accelerated search for the Li-N composition space</a></li>
+</ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -398,12 +442,40 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="right-next"
+       href="analysis-lifepo4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Testing M3GNet for Random Structure Searching</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaxations-using-m3gnet">Relaxations using M3GNet</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

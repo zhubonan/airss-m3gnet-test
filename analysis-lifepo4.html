@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Test case - \(\ce{LiFeSO4F}\)" href="analysis-lifeso4f.html" />
-    <link rel="prev" title="Testing M3GNet for Random Structure Searching" href="intro.html" />
+    <link rel="prev" title="Testing M3GNet for Random Structure Searching" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -133,7 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="intro.html">
+<a class="navbar-brand logo" href="README.html">
   
   
   
@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
+                <a class="reference internal" href="README.html">
                     Testing M3GNet for Random Structure Searching
                 </a>
             </li>
@@ -601,8 +601,9 @@ This confirms that the former is indeed the ground state structure.</p>
 </table>
 </div></div></div>
 </div>
-<p>The top three structures in the M3GNet search The first structure are in fact very close to the <span class="math notranslate nohighlight">\(Pnma\)</span> structure.
-The second and the third structure has much larger volume, however which is potentially an false minima.</p>
+<p>The table below shows the top three structures in the M3GNet search.
+The first structure is in fact very close to the <span class="math notranslate nohighlight">\(Pnma\)</span> structure.
+The second and the third structure has much larger volume, however, which are potentially from an false minimum.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_m3g</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
@@ -736,8 +737,62 @@ The second and the third structure has much larger volume, however which is pote
 </div>
 <p>Results from additional structure sampled with M3GNet.</p>
 <p>Due to the low cost of M3GNet relaxation, we can afford to sample much more structures than DFT, even if the latter already uses low-cost setting focusing on the speed.</p>
-<p>But this time the <span class="math notranslate nohighlight">\(Pnma\)</span> structure is not found, maybe it is just bad luck 🎲? The search includes random structure containing 4 formula units only.</p>
-<div class="cell docutils container">
+<p>But this time the <span class="math notranslate nohighlight">\(Pnma\)</span> structure is not found, maybe it is just bad luck 🎲? The search includes random structures containing 4 formula units only.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Search settings for random structure generation<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="o">%</span><span class="n">BLOCK</span> <span class="n">LATTICE_CART</span>
+<span class="mf">10.452988</span>  <span class="mf">0.000000</span>  <span class="mf">0.000000</span>
+ <span class="mf">0.000000</span>  <span class="mf">6.086495</span>  <span class="mf">0.000000</span>
+ <span class="mf">0.000000</span>  <span class="mf">0.000000</span>  <span class="mf">4.753437</span>
+<span class="o">%</span><span class="n">ENDBLOCK</span> <span class="n">LATTICE_CART</span>
+
+<span class="c1">#TARGVOL=80</span>
+
+<span class="o">%</span><span class="n">BLOCK</span> <span class="n">POSITIONS_ABS</span>
+<span class="n">Li</span>  <span class="mf">0.000000</span>  <span class="mf">0.000000</span>  <span class="mf">0.000000</span>
+<span class="n">O</span>  <span class="mf">4.217576</span>  <span class="mf">4.564871</span>  <span class="mf">5.905294</span> <span class="c1">#  PO4-1 %  </span>
+<span class="n">O</span>  <span class="mf">3.494553</span>  <span class="mf">3.329881</span>  <span class="mf">3.736885</span> <span class="c1">#  PO4-1 %</span>
+<span class="n">O</span>  <span class="mf">3.494553</span>  <span class="mf">5.799862</span>  <span class="mf">3.736885</span> <span class="c1">#  PO4-1 % </span>
+<span class="n">O</span>  <span class="mf">5.672957</span>  <span class="mf">4.564871</span>  <span class="mf">3.771439</span> <span class="c1">#  PO4-1 % </span>
+<span class="n">P</span>  <span class="mf">4.236933</span>  <span class="mf">4.564871</span>  <span class="mf">4.367667</span>  <span class="c1">#  PO4-1 % </span>
+<span class="n">Fe</span>  <span class="mf">8.168949</span>  <span class="mf">1.521624</span>  <span class="mf">2.490639</span> 
+<span class="o">%</span><span class="n">ENDBLOCK</span> <span class="n">POSITIONS_ABS</span>
+
+<span class="c1">#SYMMOPS=2-4</span>
+<span class="c1">###SGRANK=20</span>
+<span class="c1">#NFORM=4</span>
+<span class="c1">#SLACK=0.25</span>
+<span class="c1">#OVERLAP=0.1</span>
+<span class="c1">#COMPACT</span>
+<span class="c1">#CELLADAPT</span>
+<span class="c1">#MINSEP=1.0 Li-Li=3.04 Li-O=2.11 Li-P=2.69 Li-Fe=3.31 O-O=2.47 O-P=1.54 O-Fe=2.10 P-P=3.71 P-Fe=2.87 Fe-Fe=3.92</span>
+<span class="c1">#ADJGEN=0-1</span>
+<span class="c1">#SPIN=4 4 Fe</span>
+
+<span class="n">KPOINTS_MP_SPACING</span> <span class="mf">0.07</span>
+ 
+<span class="n">SYMMETRY_GENERATE</span>
+<span class="n">SNAP_TO_SYMMETRY</span>
+ 
+<span class="o">%</span><span class="n">BLOCK</span> <span class="n">SPECIES_POT</span>
+<span class="n">QC5</span>
+<span class="o">%</span><span class="n">ENDBLOCK</span> <span class="n">SPECIES_POT</span>
+ 
+<span class="o">%</span><span class="n">BLOCK</span> <span class="n">EXTERNAL_PRESSURE</span>
+<span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">0</span>
+<span class="o">%</span><span class="n">ENDBLOCK</span> <span class="n">EXTERNAL_PRESSURE</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g_extras</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">)</span>
 
@@ -950,7 +1005,7 @@ The settings used the different from those in the Materials Project (used for M3
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="README.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
