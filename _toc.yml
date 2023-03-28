@@ -1,0 +1,9 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: analysis-lifepo4
+- file: analysis-lifeso4f
+- file: analysis-lin2

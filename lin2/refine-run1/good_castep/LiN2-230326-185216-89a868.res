@@ -1,0 +1,30 @@
+TITL LiN2-230326-185216-89a868 -0.0045 65.290103 -1.51255959E+003 0 0  6 (Cmmm) n - 1
+REM
+REM Run started: Mon, 27 Mar 2023 19:25:54 +0000 in /home/bonan/nas/work/m3gnet/lin2/refine-run1
+REM CASTEP 22.11| from code version b807d1bba+ Castep221_branch Wed Sep 14 11:18:35 2022 +0100
+REM Functional Perdew Burke Ernzerhof Relativity Koelling-Harmon Dispersion off
+REM Cut-off 800.0000 eV Grid scale 2.0000 Gmax 43.4715 1/A FBSC none
+REM MP grid 8 5 4 Offset 0.000 0.000 0.000 No. kpts 24 Spacing 0.05
+REM Total runtime: 99.72 s
+REM Overall efficiency: 86 %
+REM
+REM LiN2.cell (d2ef6ed2fcbb8712920a7d83bb41834a)
+REM ## AIRSS Version 0.9.3 July 2022 commit v0.9.3-8-ga1e635fa32177e30cc
+REM
+REM
+REM cmdline: crud.pl -mpinp 16 
+REM
+REM
+REM N 2|1.1|14|16|18|20:21(qc=7)
+REM Li 1|1.0|14|16|18|10U:20(qc=7)
+REM 
+CELL 1.54180    2.87019    4.16361    5.46346   90.00000   90.00000   90.00000
+LATT -1
+SFAC Li N  
+Li     1  0.0972972912917 -0.5000000000000  0.2500863491087 1.0
+Li     1 -0.4027027087083  0.5000000000000 -0.2500863491087 1.0
+N      2  0.0972348043541 -0.1396329248757 -0.2500292026724 1.0
+N      2 -0.4027651956459  0.1396329248757  0.2500292026724 1.0
+N      2 -0.4027651956459 -0.1396329248757  0.2500292026724 1.0
+N      2  0.0972348043541  0.1396329248757 -0.2500292026724 1.0
+END
