@@ -395,6 +395,7 @@ document.write(`
 
 <span class="kn">from</span> <span class="nn">ase.io</span> <span class="kn">import</span> <span class="n">read</span>
 <span class="kn">from</span> <span class="nn">pymatgen.io.ase</span> <span class="kn">import</span> <span class="n">AseAtomsAdaptor</span>
+<span class="kn">from</span> <span class="nn">pymatgen.core</span> <span class="kn">import</span> <span class="n">Structure</span>
 </pre></div>
 </div>
 </div>
@@ -407,17 +408,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lfp_mp</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFePO4-mp-19017.vasp&quot;</span><span class="p">)</span>
 <span class="n">lfp_cmcm</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFePO4-mp-18951.vasp&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">lfp_mp</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFePO4-mp-19017.vasp&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lfp_cmcm</span> <span class="o">=</span> <span class="n">Structure</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;LiFePO4-mp-18951.vasp&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;Structure&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -528,7 +518,7 @@ This confirms that the former is indeed the ground state structure.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;M3GNet LiFePO4 AIRSS rerun&#39;)
 </pre></div>
 </div>
-<img alt="_images/0e7a900f32b05648c05ddfa1fca6d756cee2ab93d1eb7824c016a6a1d5b5d7ea.png" src="_images/0e7a900f32b05648c05ddfa1fca6d756cee2ab93d1eb7824c016a6a1d5b5d7ea.png" />
+<img alt="_images/e6e51293669c7a1d0b71c3194c49027ca891b51d13b15e9aba1e1be9dc5137be.png" src="_images/e6e51293669c7a1d0b71c3194c49027ca891b51d13b15e9aba1e1be9dc5137be.png" />
 </div>
 </div>
 <p>The top three structures in the DFT search are the <span class="math notranslate nohighlight">\(Pnma\)</span> structure</p>
@@ -567,7 +557,7 @@ This confirms that the former is indeed the ground state structure.</p>
   </thead>
   <tbody>
     <tr>
-      <th>209</th>
+      <th>1454</th>
       <td>(Atom('Li', [-1.27204080371, -0.08562405684, -...</td>
       <td>4LFP_actual-201127-012020-107264</td>
       <td>-12150.5489</td>
@@ -576,7 +566,7 @@ This confirms that the former is indeed the ground state structure.</p>
       <td>10.498721</td>
     </tr>
     <tr>
-      <th>2185</th>
+      <th>885</th>
       <td>(Atom('Li', [1.2645500751, 2.8846016452910335,...</td>
       <td>4LFP_actual-201126-142402-eb7dce</td>
       <td>-12150.4655</td>
@@ -585,7 +575,7 @@ This confirms that the former is indeed the ground state structure.</p>
       <td>10.428370</td>
     </tr>
     <tr>
-      <th>2304</th>
+      <th>1351</th>
       <td>(Atom('Li', [0.0, 2.98881, 0.0], index=0), Ato...</td>
       <td>4LFP_actual-201126-144638-9aee88</td>
       <td>-12150.3458</td>
@@ -635,7 +625,7 @@ The second and the third structure has much larger volume, however, which are po
   </thead>
   <tbody>
     <tr>
-      <th>2304</th>
+      <th>1351</th>
       <td>(Atom('Li', [1.2980831344313938e-08, 3.0477790...</td>
       <td>4LFP_actual-201126-144638-9aee88</td>
       <td>-190.6370</td>
@@ -644,7 +634,7 @@ The second and the third structure has much larger volume, however, which are po
       <td>10.955443</td>
     </tr>
     <tr>
-      <th>896</th>
+      <th>724</th>
       <td>(Atom('Li', [1.4982718026222916, -2.7811777820...</td>
       <td>4LFP_actual-201126-194829-b3779f</td>
       <td>-190.5574</td>
@@ -653,8 +643,8 @@ The second and the third structure has much larger volume, however, which are po
       <td>12.959209</td>
     </tr>
     <tr>
-      <th>1347</th>
-      <td>(Atom('Li', [-0.10981643308137104, 1.862519399...</td>
+      <th>1496</th>
+      <td>(Atom('Li', [-0.10981643308137115, 1.862519399...</td>
       <td>4LFP-201124-120454-c024e6</td>
       <td>-95.2657</td>
       <td>-6.804693</td>
@@ -701,7 +691,7 @@ The second and the third structure has much larger volume, however, which are po
   </thead>
   <tbody>
     <tr>
-      <th>2304</th>
+      <th>1351</th>
       <td>(Atom('Li', [-5.082385941234509e-08, 3.0385184...</td>
       <td>4LFP_actual-201126-144638-9aee88</td>
       <td>-190.7400</td>
@@ -710,7 +700,7 @@ The second and the third structure has much larger volume, however, which are po
       <td>10.830344</td>
     </tr>
     <tr>
-      <th>209</th>
+      <th>1454</th>
       <td>(Atom('Li', [-1.2298484862066035, -0.047512032...</td>
       <td>4LFP_actual-201127-012020-107264</td>
       <td>-190.7347</td>
@@ -719,7 +709,7 @@ The second and the third structure has much larger volume, however, which are po
       <td>10.808982</td>
     </tr>
     <tr>
-      <th>2185</th>
+      <th>885</th>
       <td>(Atom('Li', [1.2550794873303508, 2.90345909632...</td>
       <td>4LFP_actual-201126-142402-eb7dce</td>
       <td>-190.7269</td>
@@ -804,7 +794,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;M3GNet LiFePO4 extras&#39;)
 </pre></div>
 </div>
-<img alt="_images/869cbe4f17e84ef4834470984d2f7c8a69f84228cfbc5ef30c38717ae5044656.png" src="_images/869cbe4f17e84ef4834470984d2f7c8a69f84228cfbc5ef30c38717ae5044656.png" />
+<img alt="_images/d22b65a2257867ca67c924af62580ffde099c6dde40c69a735ad2cd54ec664fd.png" src="_images/d22b65a2257867ca67c924af62580ffde099c6dde40c69a735ad2cd54ec664fd.png" />
 </div>
 </div>
 <p>The top structure has an increased volume this time.</p>
@@ -843,7 +833,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
   </thead>
   <tbody>
     <tr>
-      <th>1390</th>
+      <th>971</th>
       <td>(Atom('Li', [-1.1350046904651516, -2.454437522...</td>
       <td>4LFP-extras-2879</td>
       <td>-190.4938</td>
@@ -852,7 +842,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
       <td>12.987641</td>
     </tr>
     <tr>
-      <th>2377</th>
+      <th>569</th>
       <td>(Atom('Li', [-1.5309058610971905e-07, -3.47717...</td>
       <td>4LFP-extras-3721</td>
       <td>-190.4353</td>
@@ -861,7 +851,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
       <td>10.452332</td>
     </tr>
     <tr>
-      <th>2418</th>
+      <th>1062</th>
       <td>(Atom('Li', [-0.9141561212472172, -1.608771912...</td>
       <td>4LFP-extras-2798</td>
       <td>-190.4301</td>
@@ -870,7 +860,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
       <td>10.475961</td>
     </tr>
     <tr>
-      <th>186</th>
+      <th>981</th>
       <td>(Atom('Li', [-0.06135356788171718, 1.447172254...</td>
       <td>4LFP-extras-2148</td>
       <td>-190.4099</td>
@@ -893,10 +883,10 @@ The DFT energies have large spreads due to the coarse calculation settings used.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd62d2a2800&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbaab43f520&gt;
 </pre></div>
 </div>
-<img alt="_images/5f4a52954d3ab9c9c240c265b25afc4915b4a5e980e51f4ce9b0eda718cc86a6.png" src="_images/5f4a52954d3ab9c9c240c265b25afc4915b4a5e980e51f4ce9b0eda718cc86a6.png" />
+<img alt="_images/ee0488a527a1d20e900153b1a6d48cff623ab604988541a47785ca999f3c9eb8.png" src="_images/ee0488a527a1d20e900153b1a6d48cff623ab604988541a47785ca999f3c9eb8.png" />
 </div>
 </div>
 <p>Below is a plot from the structure from the search re-relaxed using VASP PBE + U.
@@ -915,7 +905,7 @@ The settings used the different from those in the Materials Project (used for M3
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-6.9, -6.65)
 </pre></div>
 </div>
-<img alt="_images/de9e3c503e798ade506bd10a80813916b290f2d2ec57cab484ac1a3490479d52.png" src="_images/de9e3c503e798ade506bd10a80813916b290f2d2ec57cab484ac1a3490479d52.png" />
+<img alt="_images/c800ff54a1d747a9f02b2d35be048f73aa24dc0751709173513813ef0c36bade.png" src="_images/c800ff54a1d747a9f02b2d35be048f73aa24dc0751709173513813ef0c36bade.png" />
 </div>
 </div>
 </section>
@@ -949,10 +939,10 @@ The settings used the different from those in the Materials Project (used for M3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcd24a0fc70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbaab337070&gt;
 </pre></div>
 </div>
-<img alt="_images/2edfa7f0db3e4168b482a9ed3bd32c48e1b84a636c4c80b53efe24308a495d07.png" src="_images/2edfa7f0db3e4168b482a9ed3bd32c48e1b84a636c4c80b53efe24308a495d07.png" />
+<img alt="_images/6ab2bedec3774fb5188fc5351fb4f1dbd160363ed6f8806b1aefec67c271e303.png" src="_images/6ab2bedec3774fb5188fc5351fb4f1dbd160363ed6f8806b1aefec67c271e303.png" />
 </div>
 </div>
 <p>The distributions do not differ much, indicating the M3GNet has done a good job here!</p>
