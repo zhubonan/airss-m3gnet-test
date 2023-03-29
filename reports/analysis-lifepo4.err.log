@@ -17,35 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import os
-os.environ["CUDA_VISIBLE_DEVICES"]="-1"    
-
-import warnings
-from pathlib import Path
-from ase.io import read
-import ase
-# from m3gnet.models import Relaxer
-# from pymatgen.ext.matproj import MPRester
-
-import pandas as pd
-from tqdm import tqdm
-tqdm = lambda x: x
-
-from disp.analysis.airssutils import RESFile
-
-from ase.io import read
-from pymatgen.io.ase import AseAtomsAdaptor
+lfp_mp = Structure.from_file("LiFePO4-mp-19017.vasp")
+lfp_cmcm = Structure.from_file("LiFePO4-mp-18951.vasp")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 15[0m
-[1;32m     12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtqdm[39;00m [38;5;28;01mimport[39;00m tqdm
-[1;32m     13[0m tqdm [38;5;241m=[39m [38;5;28;01mlambda[39;00m x: x
-[0;32m---> 15[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdisp[39;00m[38;5;21;01m.[39;00m[38;5;21;01manalysis[39;00m[38;5;21;01m.[39;00m[38;5;21;01mairssutils[39;00m [38;5;28;01mimport[39;00m RESFile
-[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mase[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m [38;5;28;01mimport[39;00m read
-[1;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpymatgen[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m[38;5;21;01m.[39;00m[38;5;21;01mase[39;00m [38;5;28;01mimport[39;00m AseAtomsAdaptor
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m lfp_mp [38;5;241m=[39m [43mStructure[49m[38;5;241m.[39mfrom_file([38;5;124m"[39m[38;5;124mLiFePO4-mp-19017.vasp[39m[38;5;124m"[39m)
+[1;32m      2[0m lfp_cmcm [38;5;241m=[39m Structure[38;5;241m.[39mfrom_file([38;5;124m"[39m[38;5;124mLiFePO4-mp-18951.vasp[39m[38;5;124m"[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'disp'
-ModuleNotFoundError: No module named 'disp'
+[0;31mNameError[0m: name 'Structure' is not defined
+NameError: name 'Structure' is not defined
 
