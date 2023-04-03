@@ -11,7 +11,6 @@ kernelspec:
   name: python3
 ---
 
-$$\require{mhchem}$$
 # Test case - $\ce{LiFeSO4F}$
 
 Here, we use M3GNet to search for low energy $\ce{LiFeSO4F}$ structures. 
