@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Test case - $\ce{LiFeSO4F}$
+# Test case - $\mathrm{LiFeSO_4F}$
 
 Here, we use M3GNet to search for low energy $\ce{LiFeSO4F}$ structures. 
 The DFT results have been previously published here: https://aip.scitation.org/doi/full/10.1063/5.0076220.
@@ -167,7 +167,7 @@ show_compact(df_m3g.iloc[:5])
 ```
 
 On the other hand, re-relaxing the DFT relaxed structure gives different sets low energy structures,
-one has a volume per atom of about 11.8 $\mathrm{\unicode{x212B}^3}$ while the other has a volume of about 13.2 $\mathrm{\unicode{x212B}^3}$.
+one has a volume per atom of about 11.8 $\mathrm{\AA^3}$ while the other has a volume of about 13.2 $\mathrm{\AA^3}$.
 
 ```{code-cell} ipython3
 :tags: [hide-input]

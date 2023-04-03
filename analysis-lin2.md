@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Test case - $\ce{LiN2}$
+# Test case - $\mathrm{LiN_2}$
 
 In this example, we search for $\ce{LiN2}$ using both DFT and M3GNet. 
 The DFT search is performed first using AIRSS, the M3GNet is used to relax the initial structures and the DFT relaxed structures.
@@ -156,7 +156,7 @@ It is not possible to compare the energies directly as the DFT calculations are 
 is trained on VASP+PBE,
 and unlike previous two cases, we cannot use known lowest structures as references for comparison.
 The QC5 pseudopotentials used in the search are not designed to be highly transferable but focus on the speed instead.
-Hence, we re-relax the structures generated from both approaches using CASTEP+C19 at 800 eV and a kpoint spacing of $0.05 \times 2\pi \unicode{x212B}^{-1}$.
+Hence, we re-relax the structures generated from both approaches using CASTEP+C19 at 800 eV and a kpoint spacing of $0.05 \times 2\pi \AA^{-1}$.
 *C19* is the default pseudopotential library for CASTEP, which has higher accuracy than the *QC5* used for searching, but it requires higher cut off energy.
 The results are shown in the figure below.
 

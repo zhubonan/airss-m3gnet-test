@@ -1,4 +1,4 @@
-# Testing M3GNet for Random Structure Searching
+# Introduction
 
 
 This repository contains results of tests for using M3GNet for random structure searching.
@@ -59,9 +59,3 @@ For example, to relax the DFT-relaxed LiFePO4 structure using M3GNet with 8 proc
 ```
 ls with-u-rerun/*.res | parallel -j 8 -n 30 python m3gnet-relax.py with-u-rerun-relaxed-m3gnet {}
 ```
-
-
-# Table of contents
-
-:::{tableofcontents}
-:::

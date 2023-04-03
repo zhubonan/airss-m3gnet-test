@@ -34,3 +34,4 @@ sphinx:
   config:
     latex_elements:
       preamble: '\usepackage{mhchem}'
+      pointsize: 11pt
