@@ -350,7 +350,7 @@ plt.hist(engs_m3g_extras, range=(0,1), bins=100,alpha=0.5,density=True, label='m
 plt.hist(engs_dft, bins=100, range=(0,1), alpha=0.5, density=True, label='PBE + U')
 plt.legend()
 plt.xlabel('Energy per atom (eV)')
-plt.ylabel('Probability density')
+plt.ylabel('Probability density');
 ```
 
 The two distributions, one from the DFT search and the other from M3GNet, do not differ much, 

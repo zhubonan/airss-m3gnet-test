@@ -204,7 +204,7 @@ plt.hist(engs_m3g, bins=100,alpha=0.5, density=True, range=(0, 0.5), label='M3GN
 plt.hist(engs_dft, bins=100, alpha=0.5, density=True, range=(0, 0.5), label='DFT');
 plt.legend()
 plt.xlabel('Energy per atom (eV)')
-plt.ylabel('Probability density')
+plt.ylabel('Probability density');
 ```
 
 ## Discussion

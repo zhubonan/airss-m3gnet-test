@@ -144,7 +144,7 @@ plt.hist(engs_m3g, bins=100,alpha=0.5,density=True, label='M3GNet', range=(0,0.5
 plt.hist(engs_dft, bins=100, alpha=0.5, density=True, label='PBE + U', range=(0, 0.5))
 plt.legend()
 plt.xlabel('Energy per atom (eV)')
-plt.ylabel('Probability density')
+plt.ylabel('Probability density');
 ```
 Clearly, this case the M3GNet does not reproduce the PES of the DFT at all, since the two distributions are vastly different.
 It may appear that M3GNet has a high concentration of low energy structure, 
