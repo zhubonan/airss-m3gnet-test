@@ -176,8 +176,8 @@ The orange dots represent the structure that are first relaxed by DFT, then re-r
 :tags: [hide-input]
 def add_labels(ax):
     """Add axis labels"""
-    ax.set_xlabel('Energy per atom (eV)')
-    ax.set_ylabel(r'Volume per atom ($\mathrm{\AA^3}$)')
+    ax.set_ylabel('Energy per atom (eV)')
+    ax.set_xlabel(r'Volume per atom ($\mathrm{\AA^3}$)')
 
 ax = df_m3g.plot.scatter('volume_per_atom', 'energy_per_atom', label='m3gnet')
 ax = df_relaxed_m3g.plot.scatter('volume_per_atom', 'energy_per_atom', label='DFT relaxed - m3gnet', color='C1', ax=ax,s=3)
@@ -225,7 +225,7 @@ show_compact(df_relaxed_m3g.iloc[:3])
 ```
 
 Due to the low cost of M3GNet relaxation, we can afford to sample much more structures than DFT, even if the latter already uses low-cost setting focusing on the speed.
-But this time the $Pnma$ structure is not found, maybe it is just bad luck 🎲? The search includes random structures containing 4 formula units only. 
+But this time the $Pnma$ structure is not found, maybe it is just bad luck? The search includes random structures containing 4 formula units only. 
 
 :::{dropdown} Search settings for random structure generation
 ```

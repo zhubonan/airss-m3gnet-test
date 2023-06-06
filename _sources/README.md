@@ -3,7 +3,7 @@
 
 This repository contains results of tests for using M3GNet for random structure searching.
 
-The generated Jupyter Book website is hosted here 👉 https://zhubonan.github.io/airss-m3gnet-test/
+The generated Jupyter Book website is hosted here: https://zhubonan.github.io/airss-m3gnet-test/
 
 M3GNet[^m3gnet] is a Graph Neutron Network machine learning potential (MLP) that is trained on Materials Project database[^mp].
 An important advance of this model is the use of trajectories of geometry optimisation in the training.

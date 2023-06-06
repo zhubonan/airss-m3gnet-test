@@ -489,8 +489,8 @@ In the work above, we have found several new polymorphs which are not present in
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_labels</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add axis labels&quot;&quot;&quot;</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Energy per atom (eV)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Volume per atom ($\mathrm{\AA^3}$)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy per atom (eV)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Volume per atom ($\mathrm{\AA^3}$)&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">df_relaxed_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DFT relaxed -&gt; m3gnet&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -505,7 +505,7 @@ In the work above, we have found several new polymorphs which are not present in
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/d129cffc3fa28903f0910933cdd98d0a61dccc007a7cc60dd0a7fa7538355317.png" src="_images/d129cffc3fa28903f0910933cdd98d0a61dccc007a7cc60dd0a7fa7538355317.png" />
+<img alt="_images/d686a5ee981ba1bd6535b4f9f21094daaaffc191101091680d2c39cc9f90db94.png" src="_images/d686a5ee981ba1bd6535b4f9f21094daaaffc191101091680d2c39cc9f90db94.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -528,7 +528,7 @@ In the work above, we have found several new polymorphs which are not present in
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/fdd59bc4441e4bdaeddd890a5dcc049cf0c1369bd9c90076e48e3d64eb538748.png" src="_images/fdd59bc4441e4bdaeddd890a5dcc049cf0c1369bd9c90076e48e3d64eb538748.png" />
+<img alt="_images/8ea3beff5fa5f2a1e3d99c025d0659398cce268001e6da20b561e5dbdbbe2c0b.png" src="_images/8ea3beff5fa5f2a1e3d99c025d0659398cce268001e6da20b561e5dbdbbe2c0b.png" />
 </div>
 </div>
 <p>Top structure found in each case are shown below.
@@ -574,34 +574,34 @@ do not overlap with the red diamonds (experimental structure).</p>
   </thead>
   <tbody>
     <tr>
-      <th>3128</th>
+      <th>537</th>
       <td>2LiFeSO4F-200804-055229-a4aef3</td>
       <td>-6.008125</td>
       <td>11.683317</td>
     </tr>
     <tr>
-      <th>2266</th>
+      <th>1048</th>
       <td>2LiFeSO4F-200804-043547-80a807</td>
       <td>-6.008113</td>
       <td>11.704279</td>
     </tr>
     <tr>
-      <th>3718</th>
+      <th>1992</th>
       <td>2LiFeSO4F-200818-200625-fa2e89</td>
       <td>-6.005019</td>
       <td>11.657444</td>
     </tr>
     <tr>
-      <th>285</th>
-      <td>2LiFeSO4F-200819-000200-50146f</td>
-      <td>-6.001975</td>
-      <td>11.862633</td>
-    </tr>
-    <tr>
-      <th>1937</th>
+      <th>3592</th>
       <td>2LiFeSO4F-200804-031846-78332d</td>
       <td>-6.001975</td>
       <td>12.084385</td>
+    </tr>
+    <tr>
+      <th>2610</th>
+      <td>2LiFeSO4F-200819-000200-50146f</td>
+      <td>-6.001975</td>
+      <td>11.862633</td>
     </tr>
   </tbody>
 </table>
@@ -647,31 +647,31 @@ one has a volume per atom of about 11.8 <span class="math notranslate nohighligh
   </thead>
   <tbody>
     <tr>
-      <th>2232</th>
+      <th>1299</th>
       <td>2LiFeSO4F-200818-173807-f55f90</td>
       <td>-6.010575</td>
       <td>11.660858</td>
     </tr>
     <tr>
-      <th>1117</th>
+      <th>2948</th>
       <td>4LiFeSO4F-200804-093629-270f26</td>
       <td>-6.010425</td>
       <td>11.663456</td>
     </tr>
     <tr>
-      <th>2266</th>
+      <th>1048</th>
       <td>2LiFeSO4F-200804-043547-80a807</td>
       <td>-6.010275</td>
       <td>11.670359</td>
     </tr>
     <tr>
-      <th>20</th>
+      <th>987</th>
       <td>2LiFeSO4F-200804-034722-678938</td>
       <td>-6.010187</td>
       <td>13.186974</td>
     </tr>
     <tr>
-      <th>285</th>
+      <th>2610</th>
       <td>2LiFeSO4F-200819-000200-50146f</td>
       <td>-6.010144</td>
       <td>11.676132</td>
@@ -721,19 +721,19 @@ Structure <em>f55f90</em> (in <code class="docutils literal notranslate"><span c
   </thead>
   <tbody>
     <tr>
-      <th>20</th>
+      <th>987</th>
       <td>2LiFeSO4F-200804-034722-678938</td>
       <td>-472.918226</td>
       <td>12.890395</td>
     </tr>
     <tr>
-      <th>1246</th>
+      <th>2577</th>
       <td>2LiFeSO4F-200804-022644-43b3f4</td>
       <td>-472.913076</td>
       <td>12.803132</td>
     </tr>
     <tr>
-      <th>678</th>
+      <th>1960</th>
       <td>2LiFeSO4F-200804-022154-9da9fb</td>
       <td>-472.912053</td>
       <td>12.918566</td>

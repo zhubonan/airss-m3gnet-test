@@ -122,8 +122,8 @@ Similar to the $\ce{LiFePO4}$, we plot the energy per atom against the volume pe
 
 def add_labels(ax):
     """Add axis labels"""
-    ax.set_xlabel('Energy per atom (eV)')
-    ax.set_ylabel(r'Volume per atom ($\mathrm{\AA^3}$)')
+    ax.set_ylabel('Energy per atom (eV)')
+    ax.set_xlabel(r'Volume per atom ($\mathrm{\AA^3}$)')
 
 ax = df_m3g.plot.scatter('volume_per_atom', 'energy_per_atom', label='m3gnet', s=4)
 ax = df_relaxed_m3g.plot.scatter('volume_per_atom', 'energy_per_atom', label='DFT relaxed -> m3gnet', ax=ax, color='C1', s=3)

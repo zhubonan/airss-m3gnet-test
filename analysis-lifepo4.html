@@ -519,8 +519,8 @@ The orange dots represent the structure that are first relaxed by DFT, then re-r
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_labels</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add axis labels&quot;&quot;&quot;</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Energy per atom (eV)&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Volume per atom ($\mathrm{\AA^3}$)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy per atom (eV)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Volume per atom ($\mathrm{\AA^3}$)&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">df_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;m3gnet&#39;</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">df_relaxed_m3g</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;volume_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DFT relaxed - m3gnet&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -536,7 +536,7 @@ The orange dots represent the structure that are first relaxed by DFT, then re-r
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/1cb9303844a94b2f7a9bed6a02d212a8a6ee81489d88f673c6c1cf92caa0089e.png" src="_images/1cb9303844a94b2f7a9bed6a02d212a8a6ee81489d88f673c6c1cf92caa0089e.png" />
+<img alt="_images/c41e74668c13a3366fb0f38f85c05884e43f34627d33f306c4a10d6d0b66ac23.png" src="_images/c41e74668c13a3366fb0f38f85c05884e43f34627d33f306c4a10d6d0b66ac23.png" />
 </div>
 </div>
 <p>It appears that the M3GNet search is capable of finding the <span class="math notranslate nohighlight">\(Cmcm\)</span> structure.
@@ -585,19 +585,19 @@ This confirms that the former is indeed the ground state structure.</p>
   </thead>
   <tbody>
     <tr>
-      <th>1454</th>
+      <th>2367</th>
       <td>4LFP_actual-201127-012020-107264</td>
       <td>-433.948175</td>
       <td>10.498721</td>
     </tr>
     <tr>
-      <th>885</th>
+      <th>1135</th>
       <td>4LFP_actual-201126-142402-eb7dce</td>
       <td>-433.945196</td>
       <td>10.428370</td>
     </tr>
     <tr>
-      <th>1351</th>
+      <th>164</th>
       <td>4LFP_actual-201126-144638-9aee88</td>
       <td>-433.940921</td>
       <td>10.493866</td>
@@ -647,19 +647,19 @@ The second and the third structure has much larger volume, however, which are po
   </thead>
   <tbody>
     <tr>
-      <th>1351</th>
+      <th>164</th>
       <td>4LFP_actual-201126-144638-9aee88</td>
       <td>-6.808464</td>
       <td>10.955443</td>
     </tr>
     <tr>
-      <th>724</th>
+      <th>1651</th>
       <td>4LFP_actual-201126-194829-b3779f</td>
       <td>-6.805621</td>
       <td>12.959209</td>
     </tr>
     <tr>
-      <th>1496</th>
+      <th>1252</th>
       <td>4LFP-201124-120454-c024e6</td>
       <td>-6.804693</td>
       <td>12.802004</td>
@@ -707,19 +707,19 @@ The second and the third structure has much larger volume, however, which are po
   </thead>
   <tbody>
     <tr>
-      <th>1351</th>
+      <th>164</th>
       <td>4LFP_actual-201126-144638-9aee88</td>
       <td>-6.812143</td>
       <td>10.830344</td>
     </tr>
     <tr>
-      <th>1454</th>
+      <th>2367</th>
       <td>4LFP_actual-201127-012020-107264</td>
       <td>-6.811954</td>
       <td>10.808982</td>
     </tr>
     <tr>
-      <th>885</th>
+      <th>1135</th>
       <td>4LFP_actual-201126-142402-eb7dce</td>
       <td>-6.811675</td>
       <td>10.769253</td>
@@ -729,7 +729,7 @@ The second and the third structure has much larger volume, however, which are po
 </div></div></div>
 </div>
 <p>Due to the low cost of M3GNet relaxation, we can afford to sample much more structures than DFT, even if the latter already uses low-cost setting focusing on the speed.
-But this time the <span class="math notranslate nohighlight">\(Pnma\)</span> structure is not found, maybe it is just bad luck 🎲? The search includes random structures containing 4 formula units only.</p>
+But this time the <span class="math notranslate nohighlight">\(Pnma\)</span> structure is not found, maybe it is just bad luck? The search includes random structures containing 4 formula units only.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Search settings for random structure generation<div class="sd-summary-down docutils">
@@ -804,7 +804,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/0876f2dad6ab166e6c1694bcc0b154cc478ca622a7e4a72d43d3fc6aa97d9092.png" src="_images/0876f2dad6ab166e6c1694bcc0b154cc478ca622a7e4a72d43d3fc6aa97d9092.png" />
+<img alt="_images/e2ca98035c026bf31eef3ba922b38cdccc34a5f9b591c9106638818d4ed1a91f.png" src="_images/e2ca98035c026bf31eef3ba922b38cdccc34a5f9b591c9106638818d4ed1a91f.png" />
 </div>
 </div>
 <p>The top structure has an increased volume this time.</p>
@@ -840,25 +840,25 @@ Search settings for random structure generation<div class="sd-summary-down docut
   </thead>
   <tbody>
     <tr>
-      <th>971</th>
+      <th>3455</th>
       <td>4LFP-extras-2879</td>
       <td>-6.803350</td>
       <td>12.987641</td>
     </tr>
     <tr>
-      <th>569</th>
+      <th>2307</th>
       <td>4LFP-extras-3721</td>
       <td>-6.801261</td>
       <td>10.452332</td>
     </tr>
     <tr>
-      <th>1062</th>
+      <th>3898</th>
       <td>4LFP-extras-2798</td>
       <td>-6.801075</td>
       <td>10.475961</td>
     </tr>
     <tr>
-      <th>981</th>
+      <th>4133</th>
       <td>4LFP-extras-2148</td>
       <td>-6.800354</td>
       <td>10.459634</td>
@@ -883,7 +883,7 @@ Search settings for random structure generation<div class="sd-summary-down docut
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/9329668a8c7912d5470e302ae2c46c9df6d6cf6c244ce884c137371c88cf059b.png" src="_images/9329668a8c7912d5470e302ae2c46c9df6d6cf6c244ce884c137371c88cf059b.png" />
+<img alt="_images/1d3f033cf9a85c804e820357f3022b698af85dcacd4c2e04a24135479ea03463.png" src="_images/1d3f033cf9a85c804e820357f3022b698af85dcacd4c2e04a24135479ea03463.png" />
 </div>
 </div>
 <p>Both the <span class="math notranslate nohighlight">\(Pnma\)</span> and the <span class="math notranslate nohighlight">\(Cmcm\)</span> phases have been found.
@@ -908,7 +908,7 @@ The settings used the different from those in the Materials Project (used for M3
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/8b7b2aa126e258ac096210aacdee202820ebcf587d58aa463efc80eccbe88933.png" src="_images/8b7b2aa126e258ac096210aacdee202820ebcf587d58aa463efc80eccbe88933.png" />
+<img alt="_images/345326794948c2ed6adbac77961ce35a0c163269c43579385804e81cf03b1164.png" src="_images/345326794948c2ed6adbac77961ce35a0c163269c43579385804e81cf03b1164.png" />
 </div>
 </div>
 </section>
