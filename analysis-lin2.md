@@ -59,8 +59,8 @@ def show_compact(df):
 
 def add_labels(ax):
     """Add axis labels"""
-    ax.set_xlabel('Energy per atom (eV)')
-    ax.set_ylabel(r'Volume per atom ($\mathrm{\AA^3}$)')
+    ax.set_ylabel('Energy per atom (eV)')
+    ax.set_xlabel(r'Volume per atom ($\mathrm{\AA^3}$)')
 
 
 ```

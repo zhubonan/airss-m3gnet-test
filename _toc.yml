@@ -1,9 +1,12 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-book
+format: jb-article
 root: root
-chapters:
+options:
+  numbered : false
+  
+sections:
 - file: README.md
 - file: analysis-lifepo4
 - file: analysis-lifeso4f
