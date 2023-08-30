@@ -4,3 +4,4 @@ numpy
 ase>=3.22,<4
 pandas
 pymatgen
+matador-db

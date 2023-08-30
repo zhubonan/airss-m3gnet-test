@@ -79,13 +79,15 @@ def process_one(cell, outdir="m3gnet-relaxed", relaxer=None):
 if __name__ == "__main__":
     import sys
     from pathlib import Path
-    
+
     if len(sys.argv) == 1:
         print("Usage: m3gnet-relax.py <outdir> <file1> <file2}.....")
     input_names = [Path(x) for x in sys.argv[2:]]
     outdir = sys.argv[1]
 
     cells, warnings = cell2dict([str(d) for d in input_names])
+    if not isinstance(cells, list):
+        cells = [cells]
     cells = [Crystal(cell).ase_atoms for cell in cells]
     # Store the name of the files
     for atoms, name in zip(cells, input_names):
