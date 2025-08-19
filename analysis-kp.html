@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test case \(\ce{K-P}\) &#8212; Test M3GNet for random structure searching</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analysis-kp';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="root.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Test M3GNet for random structure searching - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Test M3GNet for random structure searching - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="root.html">
+                    Testing M3GNet for Random Structure Searching
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lifepo4.html">Test case <span class="math notranslate nohighlight">\(\ce{LiFePO4}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lifeso4f.html">Test case - <span class="math notranslate nohighlight">\(\mathrm{LiFeSO_4F}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis-lin2.html">Test case - <span class="math notranslate nohighlight">\(\mathrm{LiN_2}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zhubonan/airss-m3gnet-test" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zhubonan/airss-m3gnet-test/issues/new?title=Issue%20on%20page%20%2Fanalysis-kp.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analysis-kp.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Test case \ce{K-P}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="test-case-ce-k-p">
+<h1>Test case <span class="math notranslate nohighlight">\(\ce{K-P}\)</span><a class="headerlink" href="#test-case-ce-k-p" title="Link to this heading">#</a></h1>
+<p>In this section, the existing data of <span class="math notranslate nohighlight">\(\ce{K-P}\)</span> search and check if the low energy structures can be find by relaxation using M3GNet.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;-1&quot;</span>    
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ase.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">read</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ase</span>
+<span class="c1"># from m3gnet.models import Relaxer</span>
+<span class="c1"># from pymatgen.ext.matproj import MPRester</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="n">tqdm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ase.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">read</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymatgen.io.ase</span><span class="w"> </span><span class="kn">import</span> <span class="n">AseAtomsAdaptor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymatgen.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Structure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matador.scrapers</span><span class="w"> </span><span class="kn">import</span> <span class="n">res2dict</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_matador_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load dataset&quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">matador.hull</span><span class="w"> </span><span class="kn">import</span> <span class="n">QueryConvexHull</span>
+    <span class="n">cells</span><span class="p">,</span> <span class="n">warnings</span> <span class="o">=</span> <span class="n">res2dict</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="n">as_model</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">hull</span> <span class="o">=</span> <span class="n">QueryConvexHull</span><span class="p">(</span><span class="n">cursor</span><span class="o">=</span><span class="n">cells</span><span class="p">,</span> <span class="n">species</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">],</span> <span class="n">no_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">:</span>
+        <span class="n">dataset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s1">&#39;atoms&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">ase_atoms</span><span class="p">,</span>
+            <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+            <span class="s1">&#39;energy&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;enthalpy&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;formation_energy_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;formation_enthalpy_per_atom&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;hull_distance&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;hull_distance&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="s2">&quot;enthalpy_per_atom&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">cell_volume</span><span class="p">,</span>
+            <span class="s1">&#39;volume_per_atom&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">cell_volume</span> <span class="o">/</span> <span class="n">atoms</span><span class="o">.</span><span class="n">num_atoms</span><span class="p">,</span>
+
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;energy_per_atom&#39;</span><span class="p">),</span> <span class="n">hull</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show_compact</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;energy_per_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;volume_per_atom&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;K-P/K-P-known-dft&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;K-P/K-P-airss-dft&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="n">df_dft</span><span class="p">,</span> <span class="n">hull</span> <span class="o">=</span> <span class="n">load_matador_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="n">hull</span><span class="o">.</span><span class="n">plot_hull</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;K-P/K-P-known-dft&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;K-P/K-P-airss-dft&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_dft</span><span class="p">,</span> <span class="n">hull</span> <span class="o">=</span> <span class="n">load_matador_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">hull</span><span class="o">.</span><span class="n">plot_hull</span><span class="p">()</span>
+
+<span class="nn">Cell In[2], line 3,</span> in <span class="ni">load_matador_dataset</span><span class="nt">(names)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">load_matador_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Load dataset&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">matador.hull</span><span class="w"> </span><span class="kn">import</span> <span class="n">QueryConvexHull</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">cells</span><span class="p">,</span> <span class="n">warnings</span> <span class="o">=</span> <span class="n">res2dict</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="n">as_model</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.23</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matador</span><span class="o">/</span><span class="n">hull</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Matthew Evans&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Matthew Evans&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.hull</span><span class="w"> </span><span class="kn">import</span> <span class="n">QueryConvexHull</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.phase_diagram</span><span class="w"> </span><span class="kn">import</span> <span class="n">PhaseDiagram</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.hull_ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">EnsembleHull</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.9.23</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">matador</span><span class="o">/</span><span class="n">hull</span><span class="o">/</span><span class="n">hull</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">bson.son</span><span class="w"> </span><span class="kn">import</span> <span class="n">SON</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pm</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;bson&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;K-P/K-P-m3gnet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">)</span>
+<span class="n">df_m3gnet</span><span class="p">,</span> <span class="n">m3gnet_hull</span> <span class="o">=</span> <span class="n">load_matador_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="n">m3gnet_hull</span><span class="o">.</span><span class="n">plot_hull</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully scraped 6082 out of 6082 files.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">117</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">names</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;K-P/K-P-m3gnet&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.res&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_m3gnet</span><span class="p">,</span> <span class="n">m3gnet_hull</span> <span class="o">=</span> <span class="n">load_matador_dataset</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">m3gnet_hull</span><span class="o">.</span><span class="n">plot_hull</span><span class="p">()</span>
+
+<span class="nn">Cell In[101], line 8,</span> in <span class="ni">load_matador_dataset</span><span class="nt">(names)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">cells</span><span class="p">,</span> <span class="n">warnings</span> <span class="o">=</span> <span class="n">res2dict</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="n">as_model</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">hull</span> <span class="o">=</span> <span class="n">QueryConvexHull</span><span class="p">(</span><span class="n">cursor</span><span class="o">=</span><span class="n">cells</span><span class="p">,</span> <span class="n">species</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">],</span> <span class="n">no_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">for</span> <span class="n">atoms</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">dataset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="s1">&#39;atoms&#39;</span><span class="p">:</span> <span class="n">atoms</span><span class="o">.</span><span class="n">ase_atoms</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="p">)</span>
+
+<span class="nn">File ~/.local/miniforge3/envs/m3gnet/lib/python3.9/site-packages/matador/hull/hull.py:204,</span> in <span class="ni">QueryConvexHull.__init__</span><span class="nt">(self, query, cursor, elements, species, voltage, volume, subcmd, plot_kwargs, lazy, energy_key, client, collections, db, include_elemental_electrodes, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_non_elemental</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">lazy</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">204</span>     <span class="bp">self</span><span class="o">.</span><span class="n">create_hull</span><span class="p">()</span>
+
+<span class="nn">File ~/.local/miniforge3/envs/m3gnet/lib/python3.9/site-packages/matador/hull/hull.py:228,</span> in <span class="ni">QueryConvexHull.create_hull</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="n">print_notify</span><span class="p">(</span><span class="s2">&quot;Filtering for unique structures...&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">filter_unique_structures</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="n">args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="n">energy_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">energy_key</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">228</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_phase_diagram</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">hull_cursor</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">print_warning</span><span class="p">(</span><span class="s2">&quot;No structures on hull with chosen chemical potentials.&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/miniforge3/envs/m3gnet/lib/python3.9/site-packages/matador/hull/hull.py:386,</span> in <span class="ni">QueryConvexHull.construct_phase_diagram</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">def</span><span class="w"> </span><span class="nf">construct_phase_diagram</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Create a phase diagram with arbitrary chemical potentials.</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span><span class="sd">     Expects self.cursor to be populated with structures and chemical potential</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span><span class="sd">     labels to be set under self.species.</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">386</span>     <span class="bp">self</span><span class="o">.</span><span class="n">set_chempots</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">filter_cursor_by_chempots</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">formation_key</span> <span class="o">=</span> <span class="s2">&quot;formation_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">energy_key</span><span class="p">)</span>
+
+<span class="nn">File ~/.local/miniforge3/envs/m3gnet/lib/python3.9/site-packages/matador/hull/hull.py:468,</span> in <span class="ni">QueryConvexHull.set_chempots</span><span class="nt">(self, energy_key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span>             <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chempot_cursor</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">468</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="s2">&quot;Found </span><span class="si">{}</span><span class="s2"> of </span><span class="si">{}</span><span class="s2"> required chemical potentials&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>             <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chempot_cursor</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">471</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;debug&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="nb">print</span><span class="p">([</span><span class="n">mu</span><span class="p">[</span><span class="s2">&quot;stoichiometry&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chempot_cursor</span><span class="p">])</span>
+
+<span class="ne">RuntimeError</span>: Found 0 of 2 required chemical potentials
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_m3gnet</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>atoms</th>
+      <th>label</th>
+      <th>energy</th>
+      <th>energy_per_atom</th>
+      <th>volume</th>
+      <th>volume_per_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4103</th>
+      <td>(Atom('P', [-1.6698395870952698, 3.22573066291...</td>
+      <td>K-P-m3gnet/KP-wnqmm6.res</td>
+      <td>-40.5366</td>
+      <td>-5.067075</td>
+      <td>250.824375</td>
+      <td>31.353047</td>
+    </tr>
+    <tr>
+      <th>2925</th>
+      <td>(Atom('P', [-1.312102894115097, 4.202374920281...</td>
+      <td>K-P-m3gnet/KP-6651js.res</td>
+      <td>-80.9194</td>
+      <td>-5.057462</td>
+      <td>589.470793</td>
+      <td>36.841925</td>
+    </tr>
+    <tr>
+      <th>5237</th>
+      <td>(Atom('P', [4.038585076995661, 3.3412898495531...</td>
+      <td>K-P-m3gnet/KP-c4oyuc.res</td>
+      <td>-40.4402</td>
+      <td>-5.055025</td>
+      <td>210.721471</td>
+      <td>26.340184</td>
+    </tr>
+    <tr>
+      <th>616</th>
+      <td>(Atom('P', [-4.403636803176146e-06, 1.68441971...</td>
+      <td>K-P-m3gnet/KP-nusyaj.res</td>
+      <td>-40.4270</td>
+      <td>-5.053375</td>
+      <td>255.979399</td>
+      <td>31.997425</td>
+    </tr>
+    <tr>
+      <th>5471</th>
+      <td>(Atom('P', [-5.064573071781575, -2.90066334958...</td>
+      <td>K-P-m3gnet/KP-hukpwq.res</td>
+      <td>-80.8470</td>
+      <td>-5.052937</td>
+      <td>504.269827</td>
+      <td>31.516864</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6003</th>
+      <td>(Atom('P', [-1.3283444209669027e-07, 1.1396572...</td>
+      <td>K-P-m3gnet/KP-lnayr5.res</td>
+      <td>-10.5693</td>
+      <td>-0.754950</td>
+      <td>485.532674</td>
+      <td>34.680905</td>
+    </tr>
+    <tr>
+      <th>457</th>
+      <td>(Atom('P', [7.859704999954413, 2.2282263144945...</td>
+      <td>K-P-m3gnet/KP-kxf44c.res</td>
+      <td>-10.5693</td>
+      <td>-0.754950</td>
+      <td>485.532921</td>
+      <td>34.680923</td>
+    </tr>
+    <tr>
+      <th>6036</th>
+      <td>(Atom('P', [4.3542998379999993e-10, 7.85974699...</td>
+      <td>K-P-m3gnet/KP-jo60ai.res</td>
+      <td>-10.5693</td>
+      <td>-0.754950</td>
+      <td>485.540767</td>
+      <td>34.681483</td>
+    </tr>
+    <tr>
+      <th>5673</th>
+      <td>(Atom('P', [7.860404136909331, 7.8604049997610...</td>
+      <td>K-P-m3gnet/KP-bpozpx.res</td>
+      <td>-10.5693</td>
+      <td>-0.754950</td>
+      <td>485.662660</td>
+      <td>34.690190</td>
+    </tr>
+    <tr>
+      <th>3483</th>
+      <td>(Atom('P', [7.709867277000001e-10, 2.894402001...</td>
+      <td>K-P-m3gnet/KP-4rjrr0.res</td>
+      <td>-7.4325</td>
+      <td>-0.530893</td>
+      <td>622.411280</td>
+      <td>44.457949</td>
+    </tr>
+  </tbody>
+</table>
+<p>6082 rows × 6 columns</p>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bonan Zhu
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
